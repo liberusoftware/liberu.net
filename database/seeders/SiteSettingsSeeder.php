@@ -16,13 +16,13 @@ class SiteSettingsSeeder extends Seeder
         $settings->site_address = '123 Real Estate St, London, UK';
         $settings->site_country = 'United Kingdom';
         $settings->site_email = 'info@liberurealestate.com';
-        $settings->whatsapp_url = null;
-        $settings->youtube_url = null;
-        $settings->facebook_url = null;
-        $settings->instagram_url = null;
-        $settings->twitter_url = null;
-        $settings->linkedin_url = null;
-        $settings->github_url = null;
+        $settings->whatsapp_url = 'https://wa.me/+441793200950';
+        $settings->youtube_url = 'https://www.youtube.com/@liberusoftware';
+        $settings->facebook_url = 'https://www.facebook.com/liberusoftware';
+        $settings->instagram_url = 'https://www.instagram.com/liberusoftware';
+        $settings->twitter_url = 'https://x.com/liberusoftware';
+        $settings->linkedin_url = 'https://www.linkedin.com/company/liberugroup';
+        $settings->github_url = 'https://www.github.com/liberusoftware';
 
         if (method_exists($settings, 'save')) {
             $settings->save();
