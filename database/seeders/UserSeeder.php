@@ -16,10 +16,12 @@ class UserSeeder extends Seeder
      */
     public function run(): void
     {
+
+        $adminPassword = Str::random(12);
         $adminUser = User::create([
             'name' => 'Admin User',
             'email' => 'admin@example.com',
-            'password' => Hash::make('password'),
+            'password' => Hash::make($adminPassword),
             'email_verified_at' => now(),
         ]);
 
@@ -28,5 +30,8 @@ class UserSeeder extends Seeder
 
         $role = Role::where('name', 'super_admin')->firstOrFail();
         $adminUser->assignRole($role);
+
+        // Print passwords to console
+        echo "Admin password: {$adminPassword}\n";
     }
 }
